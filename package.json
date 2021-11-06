@@ -1,21 +1,24 @@
 {
   "name": "to-context-hook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The simplest API to turn a normal React custom hook to context",
+  "repository": {
+    "url": "https://github.com/loia5tqd001/to-context-hook"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "jest --config jestconfig.json",
+    "test": "jest",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.*\"",
     "lint": "tslint -p tsconfig.json",
-    "type": "tsc --noEmit",
+    "type-check": "tsc --noEmit",
     "prepare": "husky install && npm run build",
-    "prepublishOnly" : "npm run check",
-    "preversion" : "npm run check",
+    "prepublishOnly": "npm run check",
+    "preversion": "npm run check",
     "prerelease": "npm run check && npm run build",
-    "postversion" : "git push && git push --tags",
-    "check": "npm run type && npm run lint && npm run format && npm run test"
+    "postversion": "git push && git push --tags",
+    "check": "npm run type-check && npm run lint && npm run format && npm run test"
   },
   "keywords": [
     "react",

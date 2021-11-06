@@ -31,9 +31,9 @@ const combineProviders = (providers: TProvider[]) =>
   });
 
 export function toContextHook<TReturn>(
-  hook: () => TReturn, // only accept non-parameter hook
+  hook: () => TReturn, // only accept non-parameterized hook
   contextName?: TContextName,
-) {
+): () => TReturn {
   const providerKey = getProviderKey(contextName);
   const functionNameQuote = hook.name ? `"${hook.name}"` : 'Anonymous';
 
@@ -64,8 +64,9 @@ export function toContextHook<TReturn>(
           ? `You forgot to use either ContextHookProvider or withContextHook to wrap the provider "${providerKey}" around its corresponding consumers. Your ${functionNameQuote} function thus becomes a normal hook.`
           : `You forgot to use either ContextHookProvider or withContextHook to wrap the provider around your application. Your ${functionNameQuote} function thus becomes a normal hook.`,
       );
+      return hook();
     }
-    return hook();
+    return contextValue;
   };
 }
 
