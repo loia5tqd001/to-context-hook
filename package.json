@@ -1,6 +1,6 @@
 {
   "name": "to-context-hook",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "The simplest API to turn a normal React custom hook to context",
   "repository": {
     "url": "https://github.com/loia5tqd001/to-context-hook"
