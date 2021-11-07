@@ -1,6 +1,6 @@
 {
   "name": "to-context-hook",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The simplest API to turn a normal React custom hook to context",
   "repository": {
     "url": "https://github.com/loia5tqd001/to-context-hook"
@@ -20,6 +20,9 @@
     "postversion": "git push && git push --tags",
     "check": "npm run type-check && npm run lint && npm run format && npm run test"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "react",
     "context",
